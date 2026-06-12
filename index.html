@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harris ❤️ Amanda</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#ff6ea9,#ff9ac2,#ffd6e7);
+color:#fff;
+overflow-x:hidden;
+}
+
+.container{
+padding:30px 20px;
+max-width:900px;
+margin:auto;
+text-align:center;
+position:relative;
+z-index:2;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.title{
+font-family:'Great Vibes',cursive;
+font-size:70px;
+text-shadow:0 0 20px rgba(255,255,255,.8);
+}
+
+.subtitle{
+margin-top:10px;
+font-size:18px;
+}
+
+.card{
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(10px);
+padding:20px;
+border-radius:20px;
+margin-top:20px;
+}
+
+.counter{
+font-size:42px;
+font-weight:bold;
+}
+
+.section{
+margin-top:30px;
+}
+
+.section h2{
+margin-bottom:10px;
+}
+
+.heart{
+position:fixed;
+top:-50px;
+animation:fall linear forwards;
+font-size:24px;
+pointer-events:none;
+}
+
+@keyframes fall{
+0%{transform:translateY(-50px)}
+100%{transform:translateY(120vh)}
+}
+
+.footer{
+padding:40px 20px;
+text-align:center;
+opacity:.9;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<section class="hero">
+
+<h1 class="title">
+Harris ❤️ Amanda
+</h1>
+
+<p class="subtitle">
+Together Since<br>
+01 Januari 2026
+</p>
+
+<div class="card">
+<div id="counter" class="counter">0 Hari</div>
+</div>
+
+</section>
+
+<div class="section card">
+<h2>📍 Awal Cerita Kami</h2>
+<p>
+Semua berawal dari sebuah pertemuan di
+<b>Warjo Cijantung</b>.
+Dari sana tumbuh cerita, tawa, dan cinta yang terus berjalan hingga hari ini.
+</p>
+</div>
+
+<div class="section card">
+<h2>🎂 Ulang Tahun</h2>
+<p><b>Harris</b><br>25 September 2004</p>
+<br>
+<p><b>Amanda</b><br>02 Oktober 2007</p>
+</div>
+
+<div class="section card">
+<h2>💌 Surat Cinta</h2>
+<p>
+Terima kasih sudah menjadi bagian terindah dalam hidupku.
+Semoga kita selalu saling menjaga,
+saling menguatkan,
+dan terus berjalan bersama dalam setiap langkah kehidupan.
+</p>
+</div>
+
+<div class="section card">
+<h2>💍 Future Dreams</h2>
+
+<p>💍 Menikah dalam 10 tahun ke depan</p>
+<br>
+<p>🏡 Memiliki rumah sendiri dan membangun keluarga bahagia</p>
+<br>
+<p>✈️ Membuat lebih banyak kenangan bersama</p>
+
+</div>
+
+</div>
+
+<div class="footer">
+Forever Starts With Us ❤️<br>
+Harris & Amanda
+</div>
+
+<script>
+
+const startDate = new Date("2026-01-01");
+
+function updateCounter(){
+
+const now = new Date();
+
+const diff = now - startDate;
+
+const days = Math.floor(diff/(1000*60*60*24));
+
+document.getElementById("counter").innerHTML =
+days + " Hari Bersama";
+
+}
+
+updateCounter();
+setInterval(updateCounter,1000);
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=
+(Math.random()*5+5)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},10000);
+
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
